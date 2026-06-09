@@ -1,31 +1,34 @@
 /* ==========================================================================
 
-   PALETA DE CORES OFICIAL - MODERNA (Blue & Gold)
+   PALETA DE CORES - CLÍNICA VETERINÁRIA PET LIFE
 
    ========================================================================== */
 
 :root {
 
-    /* Azul Royal profundo - autoridade e confiança */
-    --primary-blue: #1e3a8a; 
+    /* Verde Escuro - Saúde e Natureza */
+    --primary-green: #0f4c3a;   
     
-    /* Dourado/Âmbar - sucesso e destaque (substitui o vermelho vivo) */
-    --accent-gold: #d97706; 
+    /* Verde Claro - Textos destacados e hovers */
+    --accent-mint: #10b981;     
     
-    /* Fundo principal */
+    /* Laranja/Coral - Destaques e chamados para ação (energia) */
+    --accent-orange: #f97316;   
+    
+    /* Fundo principal - Branco puro */
     --bg-white: #FFFFFF;
     
-    /* Fundo levemente azulado (mais moderno que o cinza frio) */
-    --bg-light: #f1f5f9;   
+    /* Fundo da página - Cinza bem claro azulado */
+    --bg-light: #f0f9ff;
     
-    /* Texto quase preto (Slate) */
-    --text-dark: #1e293b;  
+    /* Texto principal - Grafite escuro */
+    --text-dark: #1f2937;      
     
-    /* Texto secundário suave */
-    --text-muted: #64748b; 
+    /* Texto secundário */
+    --text-muted: #6b7280;     
 
-    /* Cor de hover do botão (mais escuro para contraste) */
-    --accent-hover: #b45309;
+    /* Bordas suaves */
+    --border-color: #e5e7eb;
 }
 
 
@@ -55,9 +58,6 @@ body {
 }
 
 
-
-/* O container principal */
-
 .container {
 
     padding: 2rem 1rem;
@@ -74,96 +74,89 @@ body {
 
 /* ==========================================================================
 
-   MENU DE NAVEGAÇÃO - Estilo Novo
+   MENU DE NAVEGAÇÃO
 
    ========================================================================== */
 
 nav {
 
-    /* Gradiente sutil para profundidade */
-    background: linear-gradient(to right, var(--primary-blue), #172554);
+    background-color: var(--primary-green);
 
-    padding: 1.1rem;
+    padding: 1.2rem;
 
     display: flex;
 
     justify-content: space-around;
 
-    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2); /* Sombra mais azulada */
+    box-shadow: 0 4px 12px rgba(15, 76, 58, 0.15);
 
-    border-bottom: 5px solid var(--accent-gold); /* Barra dourada de destaque */
+    border-bottom: 5px solid var(--accent-mint);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
 
 }
-
 
 
 nav a {
 
-    color: var(--bg-white);
+    color: #ecfdf5; /* Verde极 claro */
 
     text-decoration: none;
 
-    font-weight: 600; /* Fonte um pouco maisespessa */
+    font-weight: 600;
 
     font-size: 1.05rem;
 
-    padding: 6px 14px;
+    padding: 8px 16px;
 
-    border-radius: 4px;
+    border-radius: 6px;
 
     transition: all 0.3s ease;
 
-    letter-spacing: 0.3px;
-
 }
-
 
 
 nav a:hover {
 
-    background-color: var(--accent-gold);
+    background-color: var(--accent-mint);
 
-    color: #fff;
+    color: var(--primary-green);
 
-    transform: translateY(-2px); /* Efeito leve de levitação */
-
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
 
 }
 
 
-
 /* ==========================================================================
 
-   HEADER / BANNER PRINCIPAL
+   BANNER / CABEÇALHO
 
    ========================================================================== */
 
 .banner {
 
-    /* Branco com detalhes em Azul e Dourado */
     background: 
-        linear-gradient(115deg, var(--primary-blue) 12%, transparent 12.5%),
-        linear-gradient(295deg, var(--accent-gold) 12%, transparent 12.5%),
+        radial-gradient(circle at top left, var(--accent-mint), transparent 30%),
+        radial-gradient(circle at bottom right, var(--primary-green), transparent 30%),
         var(--bg-white);
 
-    color: var(--primary-blue);
+    color: var(--primary-green);
 
-    padding: 40px 20px;
+    padding: 50px 20px;
 
     text-align: center;
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    border-bottom: 1px solid #e2e8f0;
-
-    /* Borda suave dourada inferior opcional */
-    /* border-bottom: 3px solid var(--accent-gold); */
+    border-bottom: 3px solid var(--accent-orange);
 
 }
-
 
 
 .banner h1 {
@@ -178,31 +171,251 @@ nav a:hover {
 
     letter-spacing: 1px;
 
-    color: var(--primary-blue);
-
-    text-shadow: 1px 1px 0px rgba(30, 58, 138, 0.1);
+    color: var(--primary-green);
 
 }
-
 
 
 .banner p {
 
-    margin: 8px 0;
+    margin: 10px 0;
 
     font-size: 1.2rem;
 
-    font-weight: bold;
+    font-weight: 600;
 
-    color: var(--accent-gold); /* Destaque em Dourado */
+    color: var(--accent-orange);
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 
 }
 
+
 .banner img {
+
     margin-top: 15px;
-    max-width: 100%;
+
+    max-width: 120px; /* Ícone menor, pois no veterinary usamos logo */
+
     height: auto;
+
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.15));
+
+}
+
+
+
+/* ==========================================================================
+
+   CARDS DE CONTEÚDO
+
+   ========================================================================== */
+
+.card {
+
+    background: var(--bg-white);
+
+    padding: 2rem;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+
+    border-top: 5px solid var(--primary-green);
+
+    margin-bottom: 25px;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+
+}
+
+
+.card h2, .card h3 {
+
+    color: var(--primary-green);
+
+    margin-top: 0;
+
+    border-bottom: 2px solid var(--bg-light);
+
+    padding-bottom: 10px;
+
+    display: inline-block;
+
+}
+
+
+.card p {
+
+    line-height: 1.7;
+
+    color: var(--text-dark);
+
+}
+
+
+hr {
+
+    border: 0;
+
+    height: 1px;
+
+    background: var(--border-color);
+
+    margin: 1.5rem 0;
+
+}
+
+
+
+/* ==========================================================================
+
+   FORMULÁRIOS E INPUTS
+
+   ========================================================================== */
+
+input, select, textarea {
+
+    width: 100%;
+
+    padding: 0.85rem;
+
+    margin: 0.6rem 0;
+
+    border: 2px solid var(--border-color);
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    font-size: 1rem;
+
+    transition: all 0.3s ease;
+
+    background-color: #fafafa;
+
+}
+
+
+input:focus, select:focus, textarea:focus {
+
+    outline: none;
+
+    border-color: var(--primary-green);
+
+    background-color: #fff;
+
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+
+}
+
+
+/* Botão Principal - Verde Destaque */
+
+button, button[type="submit"] {
+
+    background-color: var(--primary-green);
+
+    color: var(--bg-white);
+
+    font-weight: bold;
+
+    border: none;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 4px 6px rgba(15, 76, 58, 0.2);
+
+    transition: all 0.2s ease;
+
+}
+
+
+button:hover {
+
+    background-color: var(--accent-mint);
+
+    color: var(--primary-green);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+
+}
+
+
+/* Botão Secundário (Outline) */
+
+button.secondary {
+
+    background-color: transparent;
+
+    border: 2px solid var(--primary-green);
+
+    color: var(--primary-green);
+
+}
+
+
+button.secondary:hover {
+
+    background-color: var(--primary-green);
+
+    color: #fff;
+
+}
+
+
+
+/* ==========================================================================
+
+   TABELAS DE DADOS
+
+   ========================================================================== */
+
+table {
+
+    width: 100%;
+
+    border-collapse: separate; /* Bordas separadas para estilo moderno */
+
+    border-spacing: 0;
+
+    margin-top: 1.5rem;
+
+    background-color: var(--bg-white);
+
+    border-radius: 8px;
+
+    overflow: hidden; /* Para bordas arredondadas */
+    
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+}
+
+
+th, td {
+
+    padding: 14px 20px;
+
+    text-align: left;
+
+}
+
+
+thead tr
